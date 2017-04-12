@@ -2,7 +2,9 @@
 
     namespace thebuggenie\modules\mailing\entities;
 
-    use thebuggenie\modules\mailing\entities\tables\IncomingEmailAccounts;
+    use Ddeboer\Imap\Connection;
+    use Ddeboer\Imap\Exception\AuthenticationFailedException;
+    use Ddeboer\Imap\Server;
 
     /**
      * @Table(name="\thebuggenie\modules\mailing\entities\tables\IncomingEmailAccounts")
@@ -67,6 +69,10 @@
          * @Column(type="string", length=200)
          */
         protected $_password;
+
+        /**
+         * @var \Ddeboer\Imap\Server
+         */
         protected $_connection;
 
         /**
@@ -248,20 +254,19 @@
          *
          * @return string
          */
-        public function getConnectionString()
+        public function getFlags()
         {
-            $conn_string = "{" . $this->getServer() . ":" . $this->getPort() . "/";
-            $conn_string .= ($this->getServerType() == self::SERVER_IMAP) ? "imap" : "pop3";
+            $flags_string = "/imap";
 
-            if ($this->usesSSL())
-                $conn_string .= "/ssl";
-            if ($this->doesIgnoreCertificateValidation())
-                $conn_string .= "/novalidate-cert";
+            if ($this->usesSSL()) {
+                $flags_string .= "/ssl";
+            }
 
-            $conn_string .= "}";
-            $conn_string .= ($this->getFoldername() == '') ? "INBOX" : $this->getFoldername();
+            if ($this->doesIgnoreCertificateValidation()) {
+                $flags_string .= "/novalidate-cert";
+            }
 
-            return $conn_string;
+            return $flags_string;
         }
 
         /**
@@ -269,19 +274,25 @@
          */
         public function connect()
         {
-            if ($this->_connection === null)
-            {
-                $options = array();
-                if ($this->usesPlaintextAuthentication())
-                    $options['DISABLE_AUTHENTICATOR'] = 'GSSAPI';
+            try {
+                if (!$this->_connection instanceof Connection)
+                {
+                    $options = array();
+                    if ($this->usesPlaintextAuthentication())
+                        $options['DISABLE_AUTHENTICATOR'] = 'GSSAPI';
 
-                $this->_connection = imap_open($this->getConnectionString(), $this->getUsername(), $this->getPassword(), 0, 0, $options);
-            }
-            if (!is_resource($this->_connection))
-            {
-                $error = imap_last_error();
-                $error = ($error === false) ? \thebuggenie\core\framework\Context::getI18n()->__('No error message provided') : $error;
-                throw new \Exception(\thebuggenie\core\framework\Context::getI18n()->__('Could not connect to the specified email server(%connection_string): %error_message', array('%connection_string' => $this->getConnectionString(), '%error_message' => $error)));
+                    $server = new Server($this->getServer(), $this->getPort(), $this->getFlags(), $options);
+                    $this->_connection = $server->authenticate($this->getUsername(), $this->getPassword());
+                }
+
+                if (!is_resource($this->_connection))
+                {
+                    $error = imap_last_error();
+                    $error = ($error === false) ? \thebuggenie\core\framework\Context::getI18n()->__('No error message provided') : $error;
+                    throw new \Exception(\thebuggenie\core\framework\Context::getI18n()->__('Could not connect to the specified email server(%connection_string): %error_message', array('%connection_string' => $this->getConnectionString(), '%error_message' => $error)));
+                }
+            } catch (AuthenticationFailedException $e) {
+
             }
         }
 

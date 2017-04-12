@@ -2,6 +2,9 @@
 
     namespace thebuggenie\modules\mailing\cli;
 
+    use thebuggenie\core\framework;
+    use thebuggenie\modules\mailing\Mailing;
+
     /**
      * CLI command class, main -> help
      *
@@ -15,10 +18,12 @@
     /**
      * CLI command class, main -> help
      *
+     * @method Mailing getModule()
+     *
      * @package thebuggenie
      * @subpackage mailing
      */
-    class CheckIncoming extends \thebuggenie\core\framework\cli\Command
+    class CheckIncoming extends framework\cli\Command
     {
 
         protected function _setup()
@@ -41,6 +46,7 @@
                 $this->cliEcho("\n");
                 foreach ($accounts as $account)
                 {
+                    framework\Context::setScope($account->getScope());
                     $account->connect();
                     $unread_count = $account->getUnreadCount();
                     $this->cliEcho("[".$account->getProject()->getKey()." (" . $account->getName() . ")] Processing ({$unread_count} unprocessed)\n");

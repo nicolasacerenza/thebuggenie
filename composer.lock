@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c57fa241d564a4ef7d94876689b4d02a",
-    "content-hash": "a471e4df758645e26cce0e15a3506f6c",
+    "content-hash": "adb13185e8169ec53700be08b5a3c5a5",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -32,7 +31,122 @@
                 "MIT"
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "time": "2014-12-30 15:22:37"
+            "time": "2014-12-30T15:22:37+00:00"
+        },
+        {
+            "name": "ddeboer/imap",
+            "version": "0.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ddeboer/imap.git",
+                "reference": "b1939740d62e427a8105312a3fb574deb62dcf68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ddeboer/imap/zipball/b1939740d62e427a8105312a3fb574deb62dcf68",
+                "reference": "b1939740d62e427a8105312a3fb574deb62dcf68",
+                "shasum": ""
+            },
+            "require": {
+                "ddeboer/transcoder": "~1",
+                "ext-imap": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "ext-mbstring": "*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ddeboer\\Imap\\": "src/",
+                    "Ddeboer\\Imap\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David de Boer",
+                    "email": "david@ddeboer.nl"
+                },
+                {
+                    "name": "Community contributors",
+                    "homepage": "https://github.com/ddeboer/imap/graphs/contributors"
+                }
+            ],
+            "description": "Object-oriented IMAP for PHP",
+            "keywords": [
+                "email",
+                "imap",
+                "mail"
+            ],
+            "time": "2015-12-03T13:23:36+00:00"
+        },
+        {
+            "name": "ddeboer/transcoder",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ddeboer/transcoder.git",
+                "reference": "8781195ad1334add26dca66a4a823b7973639754"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ddeboer/transcoder/zipball/8781195ad1334add26dca66a4a823b7973639754",
+                "reference": "8781195ad1334add26dca66a4a823b7973639754",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "ext-iconv": "For using the IconvTranscoder",
+                "ext-mbstring": "For using the MbTranscoder"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ddeboer\\Transcoder\\": "src/",
+                    "Ddeboer\\Transcoder\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David de Boer",
+                    "email": "david@ddeboer.nl"
+                },
+                {
+                    "name": "Community contributors",
+                    "homepage": "https://github.com/ddeboer/transcoder/graphs/contributors"
+                }
+            ],
+            "description": "Better encoding conversion for PHP",
+            "keywords": [
+                "charset",
+                "encoding",
+                "iconv",
+                "iso",
+                "mb",
+                "multibyte",
+                "utf-8"
+            ],
+            "time": "2015-01-23T14:32:33+00:00"
         },
         {
             "name": "easybook/geshi",
@@ -121,7 +235,7 @@
                 "http",
                 "laravel"
             ],
-            "time": "2015-07-07 16:59:33"
+            "time": "2015-07-07T16:59:33+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -198,7 +312,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2016-11-11 18:43:20"
+            "time": "2016-11-11T18:43:20+00:00"
         },
         {
             "name": "lightopenid/lightopenid",
@@ -282,7 +396,7 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2013-04-11 18:53:11"
+            "time": "2013-04-11T18:53:11+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -360,7 +474,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26 00:15:39"
+            "time": "2016-11-26T00:15:39+00:00"
         },
         {
             "name": "mrclay/jsmin-php",
@@ -412,7 +526,7 @@
                 "jsmin",
                 "minify"
             ],
-            "time": "2015-03-30 15:04:42"
+            "time": "2015-03-30T15:04:42+00:00"
         },
         {
             "name": "mrclay/minify",
@@ -526,7 +640,7 @@
                 "di",
                 "di container"
             ],
-            "time": "2016-02-10 18:59:20"
+            "time": "2016-02-10T18:59:20+00:00"
         },
         {
             "name": "mustangostang/spyc",
@@ -573,7 +687,7 @@
                 "yaml",
                 "yml"
             ],
-            "time": "2013-02-21 10:52:01"
+            "time": "2013-02-21T10:52:01+00:00"
         },
         {
             "name": "net/http",
@@ -666,7 +780,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2015-05-01 07:00:55"
+            "time": "2015-05-01T07:00:55+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -712,7 +826,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2015-09-11 15:10:35"
+            "time": "2015-09-11T15:10:35+00:00"
         },
         {
             "name": "psr/log",
@@ -759,7 +873,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "realityking/pchart",
@@ -844,7 +958,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2012-10-25 08:30:40"
+            "time": "2012-10-25T08:30:40+00:00"
         },
         {
             "name": "symfony/process",
@@ -893,7 +1007,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-24 00:43:03"
+            "time": "2016-11-24T00:43:03+00:00"
         },
         {
             "name": "thebuggenie/b2db",
@@ -982,7 +1096,7 @@
                 "minify",
                 "yui"
             ],
-            "time": "2014-09-22 08:08:50"
+            "time": "2014-09-22T08:08:50+00:00"
         },
         {
             "name": "webit/eval-math",
@@ -1076,7 +1190,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14 21:17:01"
+            "time": "2015-06-14T21:17:01+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -1125,7 +1239,7 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "time": "2015-02-03 12:10:50"
+            "time": "2015-02-03T12:10:50+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -1188,7 +1302,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-11-21 14:58:47"
+            "time": "2016-11-21T14:58:47+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1250,7 +1364,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-06 15:47:00"
+            "time": "2015-10-06T15:47:00+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1297,7 +1411,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2016-10-03 07:40:28"
+            "time": "2016-10-03T07:40:28+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -1338,7 +1452,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2015-06-21 13:50:34"
+            "time": "2015-06-21T13:50:34+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -1382,7 +1496,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2016-05-12 18:03:57"
+            "time": "2016-05-12T18:03:57+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -1431,7 +1545,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2016-11-15 14:06:22"
+            "time": "2016-11-15T14:06:22+00:00"
         },
         {
             "name": "phpunit/phpunit",
@@ -1503,7 +1617,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-09 02:45:31"
+            "time": "2016-12-09T02:45:31+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1559,7 +1673,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-10-02 06:51:40"
+            "time": "2015-10-02T06:51:40+00:00"
         },
         {
             "name": "phpunit/phpunit-skeleton-generator",
@@ -1618,7 +1732,8 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-05-14 17:42:22"
+            "abandoned": true,
+            "time": "2014-05-14T17:42:22+00:00"
         },
         {
             "name": "sebastian/comparator",
@@ -1682,7 +1797,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2016-11-19 09:18:40"
+            "time": "2016-11-19T09:18:40+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -1734,7 +1849,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2015-12-08 07:14:41"
+            "time": "2015-12-08T07:14:41+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -1784,7 +1899,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-08-18 05:49:44"
+            "time": "2016-08-18T05:49:44+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -1851,7 +1966,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2016-06-17 09:04:28"
+            "time": "2016-06-17T09:04:28+00:00"
         },
         {
             "name": "sebastian/global-state",
@@ -1902,7 +2017,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2015-10-12 03:26:01"
+            "time": "2015-10-12T03:26:01+00:00"
         },
         {
             "name": "sebastian/recursion-context",
@@ -1955,7 +2070,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2015-11-11 19:50:13"
+            "time": "2015-11-11T19:50:13+00:00"
         },
         {
             "name": "sebastian/version",
@@ -1990,7 +2105,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2015-06-21 13:59:46"
+            "time": "2015-06-21T13:59:46+00:00"
         },
         {
             "name": "symfony/console",
@@ -2051,7 +2166,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-06 11:59:35"
+            "time": "2016-12-06T11:59:35+00:00"
         },
         {
             "name": "symfony/debug",
@@ -2108,7 +2223,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-15 12:53:17"
+            "time": "2016-11-15T12:53:17+00:00"
         },
         {
             "name": "symfony/finder",
@@ -2157,7 +2272,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-13 09:38:12"
+            "time": "2016-12-13T09:38:12+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2216,7 +2331,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -2265,7 +2380,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-14 16:15:57"
+            "time": "2016-11-14T16:15:57+00:00"
         }
     ],
     "aliases": [],
